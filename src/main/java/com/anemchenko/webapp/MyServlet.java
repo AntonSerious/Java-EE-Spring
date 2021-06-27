@@ -13,9 +13,11 @@ public class MyServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+
         resp.getWriter().printf("<html><body>");
         for (int i = 0; i < 10; i++) {
-            resp.getWriter().printf("<h1>" + i + "</h1>");
+            resp.getWriter().printf("<h1>" + new Product(i, "Product " + i, i *2).getTitle() + "</h1>");
         }
         resp.getWriter().printf("</body></html>");
     }
